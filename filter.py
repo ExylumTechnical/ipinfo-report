@@ -46,6 +46,10 @@ while(valid==0):
 
 os=os_type()
 if(os=="Windows"):
+    if(pull_dec=="N"):
+        for i in ip_result:
+            cmd="copy archive\\"+i+".ipinfo .\\"
+            system(cmd)
     system("echo > fullreport.txt")
     system("type *.ipinfo >> fullreport.txt")
     system("""
@@ -53,6 +57,10 @@ if(os=="Windows"):
     """)
     system("mkdir archive && move *.ipinfo archive")
 elif(os=="Linux"):
+    if(pull_dec=="N"):
+        for i in ip_result:
+            cmd="cp archive/"+i+".ipinfo ./"
+            system(cmd)
     system("echo > fullreport.txt")
     system("cat *.ipinfo >> fullreport.txt")
     system("""
