@@ -20,6 +20,6 @@ This project sorts ip addresses into a single list, then pulls data from ipinfo.
 - this is free code and a proof of concept project not ment for commercial purposes, however it works under the following conditions
   - the filter.py file is run in its own directory
   - the ip.txt file is present and filled with valid data
-- there is little to no input validation so be careful with the ip.txt file and any file with a .ipinfo extension
+- there is little to no input validation so be careful with the ip.txt file and any file with a .ipinfo extension in the working directory and the archive directory
 
 This is inteded at a tooling foundation and not as a complete project.
