@@ -27,7 +27,8 @@ def unique_ip(ip_list):
 # pull IPinfo data for processing
 def pull_data(ip_result):
     for i in ip_result:
-        cmd_str="curl ipinfo.io/"+i+" > "+i+".ipinfo"
+        cmd_str="curl ipinfo.io/"+i[:-1]+" > "+i[:-1]+".ipinfo"
+        print(cmd_str)
         system(cmd_str)
 
 ip_list=list_data()
@@ -48,14 +49,15 @@ os=os_type()
 if(os=="Windows"):
     if(pull_dec=="N"):
         for i in ip_result:
-            cmd="copy archive\\"+i+".ipinfo .\\"
+            cmd="copy archive\\"+i[:-1]+".ipinfo"
             system(cmd)
     system("echo > fullreport.txt")
     system("type *.ipinfo >> fullreport.txt")
     system("""
     type fullreport.txt | find \"region\" && echo ##########################################&& echo see fullreport.txt for detailed information about the IP addresses listed && echo courtisy of ipinfo.io && echo ########################################## && pause
     """)
-    system("mkdir archive && move *.ipinfo archive")
+    system("mkdir archive")
+#    system("move *.ipinfo archive")
 elif(os=="Linux"):
     if(pull_dec=="N"):
         for i in ip_result:
