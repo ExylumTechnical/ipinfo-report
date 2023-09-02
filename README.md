@@ -14,6 +14,9 @@ This project sorts ip addresses into a single list, then pulls data from ipinfo.
 5) A final report is generated and put into the report.txt file and regions are output to assist in spotting irregularities off the bat
 6) All .ipinfo files will be put into the archive directory for later use
 
+# Bounus File ipInfoClass.py
+This file is a simple class to parse information about a specific ip address from ipinfo.io. Small and easy to copy and paste into a script or include.
+
 
 # Considerations
 - the ip.txt file must only be ip addresses, comments are not supported
